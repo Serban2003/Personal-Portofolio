@@ -3,21 +3,64 @@
     <head>
         <title>SIB</title>
         <link rel="stylesheet" href="style/dashboard.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
     </head>
 
     <body>
-        <nav class="nav-top" id="nav-top">
+        <div class="banner">
+            <div class="blob blob1"></div>
+            <div class="blob blob2"></div>
+            <div class="blob blob3"></div>
+            <div class="blob blob4"></div>
+        </div>
+        <span id="hamburger-icon" class="material-symbols-sharp" onclick="openMenu()">menu</span>
+        </div>
+        <div id="hamburger-menu">
+            <div class="hamburger-menu-header">
+                <span>ls Menu</span>
+                <span class="material-symbols-sharp" style="cursor: pointer;" onclick="closeMenu()">
+                    close
+                </span>
+            </div>
+            <br>
             <a href="#home">Home</a>
-            <a href="#about">About</a>
+            <a href="#about">About Me</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <nav class="nav-top" id="nav-top"> 
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
 
+        <section id="front-page" id="home">
         <div class="welcome-title">
-            <p>
             <span id="sentence" class="sentence"></span><span class="cursor"></span>
         </div>
+    </section>
+
+        <section class="about" id="about">
+            <h1>About Me</h1>
+            <div class="content">
+                <img src="images/me.jpg" alt="Photo of me" class="photo">
+
+                <div class="content-description">
+                    <div class="description" id="about-description">
+                    </div>
+                    <div id="description-output">
+                        <br>
+                        My name is Iustinian.<br>
+                        Currently, I am studying Automation and Computer Science at the Technical univeristy of Cluj-Napoca.
+                    </div>
+                </div>
+            </div>
+
+        </section>
 
     </body>
 
