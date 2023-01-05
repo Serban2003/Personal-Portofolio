@@ -12,7 +12,7 @@ body {
     overflow-x: hidden;
 }
 
-#front-page {
+.front-page {
     grid-column: 2;
     display: flex;
     flex-direction: column;
@@ -52,6 +52,7 @@ nav {
     width: 100vw;
     display: flex;
     justify-content: center;
+    z-index: 10;
 }
 
 nav a {
@@ -67,10 +68,13 @@ nav a {
 
 .cursor {
     display: inline-block;
-    height: 40px;
-    width: 20px;
     background-color: white;
     animation: blink .6s linear infinite alternate;
+}
+
+.welcome-title .cursor{
+    height: 40px;
+    width: 20px;
 }
 
 @keyframes blink {
@@ -125,6 +129,43 @@ nav a {
     cursor: pointer;
 }
 
+.scroll-icon{
+    display: flex;
+    align-self: center;
+    width: 45px;
+    height: 100px;
+    border: 2px solid rgb(31, 31, 31);
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 90px 90px 90px 90px / 70px 70px 70px 70px;
+    margin-bottom: 20px;
+}
+
+.scroll-arrow{
+    height: 35px;
+    width: 40px;
+    margin: 10px auto;
+    animation: slide 1.5s infinite;
+    filter: invert(100%) sepia(4%) saturate(131%) hue-rotate(190deg) brightness(115%) contrast(100%);
+}
+
+@keyframes slide {
+    0% {
+        margin-top: 10px;
+        opacity: 0.5;
+    }
+
+    80%{
+        margin-top: 55px;
+        opacity: 1;
+    }
+
+    100% {
+        margin-top: 10px;
+        opacity: 0;
+    }
+}
+
 
 @media screen and (max-width: 768px){
     #hamburger-icon{
@@ -143,6 +184,9 @@ nav a {
     height: 100vh;
     z-index: -1;
 }
+
+.fadeOut { opacity: 0; }
+.fadeIn { opacity: 1; }
 
 .blob{
     position: absolute;
@@ -179,14 +223,19 @@ nav a {
     border-radius: 51% 49% 10% 90% / 34% 60% 40% 66%;
 }
 
+.container{
+    display: grid;
+    margin-top: 100px; 
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.5);
+    padding: 0 40px 20px 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
 .about{
     grid-column: 2;
     grid-row: 2;
-    display: grid;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 0 20px 20px 20px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
 }
 
 h1::before{
@@ -207,20 +256,94 @@ h1::before{
 }
 
 .content-description{
+    text-align: left;
+    padding: 20px;
+    padding-bottom: 0;
+}
+
+.experience{
+    grid-column: 2;
+    grid-row: 3;
+}
+
+h3{
+    margin: 10px;
+}
+
+.content-coll{
     display: flex;
     flex-direction: column;
+    flex: 1;
+    /* border: 1px solid red; */
+    padding: 0 10px 10px 10px;
 }
 
-.description{
-    text-align: left;
-    background-color: black;
-    padding: 20px;
+.xp-container{
+    height: 40px;
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
-#description-output{
-    align-self: flex-end;
-    text-align: left;
-    background-color: black;
+.xp{
+    height: 100%;
+    background: linear-gradient(90deg, rgb(2, 220, 20), rgb(155, 241, 16));
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.xp-level{
     color: black;
-    padding: 20px;
+    margin: 0px 10px;
+    font-size: 1.5rem;
+}
+
+.xp1{
+    width: 60%;
+}
+
+.xp2{
+    width: 80%;
+}
+
+.xp3{
+    width: 40%;
+}
+
+.projects{
+    grid-column: 2;
+    grid-row: 4;
+}
+
+.project-description{
+    margin-top: 10px;
+    text-align: left;
+    padding-bottom: 20px;
+}
+
+.project-header{
+    color: rgb(104, 104, 104);
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.list{
+    text-align: left;
+    margin-top: 0;
+}
+
+.contact{
+    grid-column: 2;
+    grid-row: 5;
+}
+
+.contact-logo{
+    width: 50px;
+    height: 50px;
+}
+
+.contact a::before{
+    content: none;
 }
